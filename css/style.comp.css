@@ -1,0 +1,30 @@
+:root {
+  --color-primary: #6366F1;
+  --color-primary-light: #A78BFA;
+  --color-primary-dark: #4338CA;
+  --color-secondary: #3B82F6;
+  --color-secondary-light: #93C5FD;
+  --color-secondary-dark: #1D4ED8;
+  --color-tertiary: #6EE7B7;
+  --color-tertiary-light: #A7F3D0;
+  --color-tertiary-dark: #34D399; }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Viaoda Libre', cursive,sans-serif; }
+
+body {
+  background-image: linear-gradient(to left bottom, var(--color-primary), var(--color-primary-dark));
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat; }

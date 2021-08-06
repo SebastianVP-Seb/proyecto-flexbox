@@ -1,0 +1,55 @@
+:root {
+  --color-primary: #6366F1;
+  --color-primary-light: #A78BFA;
+  --color-primary-dark: #4338CA;
+  --color-secondary: #3B82F6;
+  --color-secondary-light: #93C5FD;
+  --color-secondary-dark: #1D4ED8;
+  --color-tertiary: #6EE7B7;
+  --color-tertiary-light: #A7F3D0;
+  --color-tertiary-dark: #34D399;
+  --shadow-dark: 0 2rem 3rem rgba(0,0,0,.3); }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Viaoda Libre', cursive,sans-serif; }
+
+body {
+  background-image: linear-gradient(to left bottom, var(--color-primary), var(--color-primary-dark));
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.container {
+  max-width: 120rem;
+  margin: 8rem 10rem;
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow-dark);
+  min-height: 70rem; }
+
+.header {
+  height: 7rem;
+  background-color: var(--color-secondary-light);
+  border-bottom: var(--color-secondary-dark); }
+
+.content {
+  display: flex; }
+
+.sidebar {
+  border-color: var(--color-tertiary-light);
+  flex: 0 0 17%;
+  background-color: var(--color-tertiary); }
+
+.hotel-view {
+  background-color: lavender;
+  flex: 1; }

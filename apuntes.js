@@ -103,11 +103,35 @@ Propiedades personalizadas de CSS:
 Para crearlas: --nombredelapropiedad: valor;
 Para usarlas: var(--propiedad)
 
+SVG: Gráficos Vectoriales Escalables. Usar la pág: Icomonn.io
+Seleccionar los íconos -> Descargarlos -> sólo interesa la carpeta con los svg y también se puede
+usar sólo el archivo symbols-defs.svg éste contiene en un sólo archivo los íconos seleccionados
+
+Para incluirlos se usa la etiqueta svg y la etiqueta use xlink:href el archivo sprite y el nombre del
+svg que queremos usar.
+
+En el archivo components.scss definir los componentes del header.
+El contenedor padre debe estar en display: flex;
+Un input no hereda la fuente, se puede poner -> font-familie: inherit;
+Para cambiar de color a svg -> fill
 
 flex-flow: column-reverse wrap;
 align-content: space-between;
 flex-direction: ;
 justify-content: center;
+
+Con flex-direction se cambia el eje principal (column)
+
+currentColor establece el color a un elemento, ya sea con el color actual o el color del elemento padre
+
+Para el hover de la barra izquierda, se usará el pseudoelemento before, el cual se mostrará primero
+y posteriormente crecerá hacia la derecha
+
+Se puede establecer la propiedad transform-origin: bottom;
+Esto indicará que la transformación comience desde la parte inferior, ya que su valor por defecto es
+center.
+
+Cubic-bezier para manejar los tiempos de las transiciones
 
 
 */

@@ -8,16 +8,84 @@
     <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <title>Ing Sebastian</title>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            holaaaaaaaaaaaaa
+            <img src="img/logo.png" alt="logo" class="logo">
+
+            <form action="#" class="search">
+                <input type="text" placeholder="Escribe tu destino" class="search__input">
+                <button class="search__button">
+                    <svg class="search__icon">
+                        <use xlink:href="img/sprite.svg#icon-aircraft"></use>
+                    </svg>
+                </button>
+            </form>
+
+            <nav class="user-nav">
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-fire"></use>
+                    </svg>
+                    <span class="user-nav__notification">7</span>
+                </div>
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-bubbles"></use>
+                    </svg>
+                    <span class="user-nav__notification">13</span>
+                </div>
+                <div class="user-nav__user">
+                    <img src="img/seb.jpg" alt="seb" class="user-nav__user-photo">
+                    <span class="user-nav__user-name">i.Am.sebastian</span>
+                </div>
+            </nav>
         </header>
+
         <div class="content">
             <nav class="sidebar">
-holaaaaaaaaaaaaa
+                <ul class="side-nav">
+                    <li class="side-nav_item">
+                        <a href="#" class="side-nav_link">
+                            <svg class="side-nav_icon">
+                                <use xlink:href="img/sprite.svg#icon-home"></use>
+                            </svg>
+                            <span class="side-nav_text">Home</span>
+                        </a>
+                    </li>
+                    <li class="side-nav_item">
+                        <a href="#" class="side-nav_link">
+                            <svg class="side-nav_icon">
+                                <use xlink:href="img/sprite.svg#icon-feather"></use>
+                            </svg>
+                            <span class="side-nav_text">Vuelos</span>
+                        </a>
+                    </li>
+                    <li class="side-nav_item">
+                        <a href="#" class="side-nav_link">
+                            <svg class="side-nav_icon">
+                                <use xlink:href="img/sprite.svg#icon-github"></use>
+                            </svg>
+                            <span class="side-nav_text">Car-Rental</span>
+                        </a>
+                    </li>
+                    <li class="side-nav_item">
+                        <a href="#" class="side-nav_link">
+                            <svg class="side-nav_icon">
+                                <use xlink:href="img/sprite.svg#icon-moon"></use>
+                            </svg>
+                            <span class="side-nav_text">Tours</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="legal">
+                    &copy: 2021 By Trillo. All rights reserved.
+                </div>
             </nav>
             <main class="hotel-view">
 holaaaaaaaaaaaaa

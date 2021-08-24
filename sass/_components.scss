@@ -7,20 +7,83 @@
 
 /////////////////////////////////////
 //Search
+
 .search {
     // background-color: aqua; Para ver el bloque
     flex: 0 0 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: hotpink;
+    position: relative;
+
+    &_autocombox:not(:hover){
+        opacity: 0;
+    }
+
+    &_autocombox{
+        opacity: 0;
+    }
+
+    & p {
+        text-align: center;
+        color: aqua;
+        font-weight: 700;
+        background-color: rgba(182, 236, 236, 0.274);
+    }
+    // padding: 0 1rem 0 0;
+
+    // transition: all .5s;
+
+    &_autocombox {
+        position: absolute;
+
+        // visibility: none;
+        // opacity: 0;
+    }
+
+    &:hover {//Para la búsqueda
+        .search_autocombox {
+            // transform: translateY(-100%);
+            opacity: 1;
+
+            position: absolute;
+
+            background-color: rgba(128, 128, 128, 0.779);
+            position: absolute;
+            top: 3.7rem;
+            left: 3.9rem;
+            list-style: none;
+            padding: 2rem 4rem;
+            border-radius: 0 0 5rem 5rem;
+            width: 32rem;
+        }
+    }
+    li:hover {
+        background-color: white;
+        width: 100%;
+        padding: .8rem;
+        color:black;
+
+        cursor: pointer;
+
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        order: 1;//para mover la barra al final
+        flex: 0 0 100%;
+    }
 
     &__input {
         font-family: inherit;
         font-size: inherit;
-        color: inherit;
-        background-color: var(--color-primary-light);
+        color: hotpink;
+        background-color: rgb(89, 0, 255);
         border: none;
-        padding: .7rem .2rem;
+        padding: .7rem 2rem;
         border-radius: 10rem;
         width: 90%;
         transition: all .5s;
@@ -29,22 +92,23 @@
         &:focus {
             width: 100%;
             outline: none;
-            background-color: var(--color-secondary-light);
+            background-color: black;
         }
 
         &::-webkit-input-placeholder {
             font-weight: 100;
-            color: var(--color-secondary-dark);
+            color: yellow;
+            margin-left: 1rem;
         }
     }
 
     &__input:focus + &__button {
-        background-color: lightblue;
+        background-color: black;
     }
 
     &__button {
         border: none;
-        background-color: lawngreen;
+        background-color: rgb(89, 0, 255);
 
         &:focus {
             outline: none;
@@ -53,6 +117,15 @@
         &:active {
             transform: translateY(.2rem);
         }
+    }
+
+    .search .active .search_autocombox{
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    .search .active .search_autocombox li{
+        display: block;
     }
 
     &__icon {
@@ -65,7 +138,7 @@
 /////////////////////////////////////
 //Nav
 .user-nav {
-    background-color: hotpink;
+    background-image: linear-gradient(to top, rgb(211, 49, 130), hotpink);
     align-items: center;
     display: flex;
 
@@ -86,13 +159,25 @@
     &__icon-box {
         position: relative;
 
+        &:hover {
+            box-shadow: 0 0 5px rgb(62, 235, 19),
+                0 0 25px rgb(62, 235, 19),
+                0 0 50px rgb(62, 235, 19),
+                0 0 100px rgb(62, 235, 19);
+
+                .user-nav__icon {
+                    fill: aqua;
+                    box-shadow: 0 0 5px rgb(62, 235, 19),
+                        0 0 25px rgb(62, 235, 19),
+                        0 0 50px rgb(62, 235, 19),
+                        0 0 100px rgb(62, 235, 19);
+            }
+        }
     }
 
     &__icon {
         height: 2.3rem;
         width: 2.3rem;
-        fill: var(--color-secondary-dark);
-
     }
 
     &__notification {
@@ -113,6 +198,13 @@
 
     &__user {
 
+        &:hover {
+            color: aqua;
+            box-shadow: 0 0 5px rgb(62, 235, 19),
+                        0 0 25px rgb(62, 235, 19),
+                        0 0 50px rgb(62, 235, 19),
+                        0 0 100px rgb(62, 235, 19);
+        }
     }
 
     &__user-photo {
@@ -123,25 +215,47 @@
 
     &__user-name {
 
+        &:hover {
+            color: aqua;
+            box-shadow: 0 0 5px rgb(62, 235, 19),
+                0 0 25px rgb(62, 235, 19),
+                0 0 50px rgb(62, 235, 19),
+                0 0 100px rgb(62, 235, 19);
+        }
     }
 }
 
 /////////////////////////////////////
 //Side-Navigation
-// .sidebar {
-
-// }
-
 .side-nav {
     font-size: 1.3rem;
     list-style: none;
     margin-top: 3.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        flex-direction: row;
+        margin: 0%;
+        // justify-content: space-evenly;
+    }
 
     &_item {
         position: relative;
 
         &:not(:last-child) {
             margin-bottom: 1rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                margin-bottom: 0%;
+            }
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            display: flex;
+            flex: 1;//así, c/item ocupará un cuarto del ancho
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
         }
     }
     
@@ -152,7 +266,7 @@
         left: 0;
         height: 100%;
         width: .4rem;
-        background-color: yellowgreen;
+        background-color: black;
         // transform-origin: bottom; para establecer donde comienza el transform
         transform: scaleY(0);
         transition: transform .3s,
@@ -167,7 +281,7 @@
     }
 
     &_item:active::before {
-        background-color: violet;
+        background-color: black;
     }
 
     &_link:link,
@@ -184,6 +298,13 @@
         position: relative;
         
         padding: 1.5rem 2.5rem;
+
+        @media only screen and (max-width: $bp-small) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: .7rem .7rem;
+        }
     }
 
     &_icon {
@@ -191,10 +312,26 @@
         height: 3rem;
         margin-right: 1.5rem;
         fill: currentColor;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0%;
+            height: 2.3rem;
+            width: 2.3rem;
+            margin-bottom: .7rem;
+        }
     }
 
-    &_text {
-
+    &_link {
+        &:hover {
+            // background-color: black;
+            .side-nav_text{
+                color:hotpink;
+            }
+    
+            .side-nav_icon {
+                color: greenyellow;
+            }
+        }
     }
 }
 
@@ -205,4 +342,472 @@
     color: var(--color-secondary-dark);
     text-align: center;
     padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
+}
+
+/////////////////////////////////////
+//Gallery
+.gallery {
+    display: flex;
+
+    &_photo {
+        width: 100%;//Para que las imágenes sean responsivas
+        display: block;
+    }
+}
+
+/////////////////////////////////////
+//Hotel Overview
+.overview {
+    display: flex;
+    // border-bottom: 1px solid var(--color-secondary-dark);
+    border-bottom: var(--line);
+    align-items: center;
+    background-color: black;
+
+    &_heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        padding: 1.5rem 3rem;
+        color: aqua;
+    }
+
+    &_stars {
+        margin-right: auto;
+        display: flex;
+    }
+
+    &_icon-star,
+    &_icon-fire {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+    }
+
+    &_location {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &_icon-fire {
+        margin-right: .5rem;
+    }
+
+    &_rating {
+        background-color: rgb(255, 25, 0);
+        color: white;
+        margin-left: 3rem;
+        align-self: stretch;
+        padding: 0 2.25rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &_rating-average {
+        font-size: 2.25rem;
+        font-weight: 300;
+        margin-bottom: -.33rem;
+    }
+
+    &_rating-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+    }
+}
+
+/////////////////////////////////////
+//Button Inline
+.btn-inline {
+    border: none;
+    color: aqua;
+    font-size: inherit;
+    border-bottom: .1rem solid currentColor;
+    padding-bottom: .2rem;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: all .5s;
+
+    & span {
+        margin-left: .3rem;
+        transition: margin-left .4s;
+    }
+
+    &:hover {
+        color: turquoise;
+
+        span {
+            margin-left: .6rem;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+    50% {
+        transform: scale(1.07);
+        box-shadow: 0 1rem 4rem rgba(0,0,0, .3);
+    }
+    100%{
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+/////////////////////////////////////
+//Paragraph
+.paragraph:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+/////////////////////////////////////
+//List
+.list {
+    list-style: none;
+    padding: 3rem 0;
+    margin: 3rem 0;
+    border-bottom: var(--line);
+    border-top: var(--line);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &_item {
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+    }
+
+    &_item::before {
+        content: "";
+        display: inline-block;
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: .7rem;
+
+        //Para nuevos navegadores: MASKS
+        
+        //Si no lo soporta:
+        background-image: url(../img/SVG/feather.svg);
+        background-size: cover;
+
+        // Si lo soporta
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: hotpink;
+            -webkit-mask-image: url(../img/SVG/feather.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../img/SVG/feather.svg);
+            mask-size: cover;
+
+            background-image: none;//permite que se vea de color rosa en Chrome, si no se pone
+                            //se verá como si no lo soportara
+        }
+    }
+}
+
+/////////////////////////////////////
+//Recommend
+.recommend {
+    font-size: 1.2rem;
+    color: hotpink;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+
+    &_count {
+        margin-right: auto;//también queda con justify-content: space-between;
+    }
+
+    &_friends {
+
+    }
+
+    &_photo {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-size: cover;
+
+        box-sizing: content-box;
+        border: .2rem solid white;
+
+        //para que las imágenes se vean encimadas
+        &:not(:last-child) {
+            margin-right: -1.2rem;
+        }
+    }
+}
+
+/////////////////////////////////////
+//Reviews
+.review {
+    background-color: rgba(243, 243, 243, 0.255); 
+    box-shadow: var(--shadow-light);
+    padding: 2rem;
+    margin-bottom: 3.5rem;
+
+    overflow: hidden;
+
+    position: relative;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &_text {
+        margin-bottom: 1rem;
+        z-index: 20;
+        position: relative;
+        color: white;
+    }
+
+    &_user {
+        display: flex;
+        align-items: center;
+    }
+
+    &_user-box {
+        display: flex;
+        margin-right: auto;
+        flex-direction: column;
+    }
+
+    &_photo {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        margin-right: .5rem;
+    }
+
+    &_user-name {
+        color: hotpink;
+        font-weight: 700;
+    }
+
+    &_user-date {
+        font-size: 1.15rem;
+        color: white;
+    }
+
+    &_rating {
+        color: hotpink;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    &::before {
+        content: "\201C";
+        position: absolute;//en el padre: position: relative (review)
+        top: -1.75rem;
+        font-family: 'Viaoda Libre', cursive,sans-serif;
+        left: 0rem;
+        font-size: 17rem;
+        color: gray;
+        line-height: 1;
+        z-index: 1;
+    }
+}
+
+/////////////////////////////////////
+//Tool action
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+    position: relative;
+    background-color: rgba(55, 20, 184, 0.295);
+
+    &_bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        // z-index: -1;
+        opacity: .3;
+    
+        overflow: hidden;
+    
+        &-content {
+            height: 100%;
+            width: 100%;//Hasta aquí, vuelve a recortar el video para que se ajuste al padre
+            // luego con object-fit: se ajusta a las dimensiones del padre
+            object-fit: cover;//similar al de las img, pero este funciona para elementos html
+        }  
+    }
+    & > * {//TODOS sus hijos
+        width: 100%;
+        height: 100%;
+        display: inline-block;//para que funcione el padding
+        transition: all .5s;
+        overflow: hidden;
+    }
+
+    &_visible {
+        padding: 2rem 7rem;
+        transition: all .5s;
+    }
+    &_invisible {
+        position: absolute;//para que se pueda poner fuera del botón cuando no está en hover
+        // left: 0%;
+        top: -100%;//del tamaño del elemento
+        padding: 2rem 0;//no se usa 7, se pone 0 para que tenga más espacio y no muestre hasta el hover
+        transition: all .5s;
+    }
+
+    &:hover &_visible {
+        // bottom: 200rem; no se puede usar porque no se definió posicionamiento
+        transform: translateY(200%);
+    }
+    &:hover &_invisible {
+        top: 3rem;//regresa del -100%
+    }
+    
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+    }
+
+    &_book-now {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+        color: hotpink;
+    }
+}
+
+/////////////////////////////////////
+//Botón
+.btn {
+    cursor: pointer;
+    font-family: 'Viaoda Libre', cursive,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 10rem;
+    overflow: hidden;
+    border: none;
+    color: white;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    position: relative;
+
+    overflow: hidden;//ya que es un elemento dentro de otro, se puede considerar que se trata
+            //de un desbordamiento, para que no se vea el texto del hover
+
+    & > * {//TODOS sus hijos
+        width: 100%;
+        height: 100%;
+        display: inline-block;//para que funcione el padding
+        transition: all .5s;
+    }
+
+    &_visible {
+        padding: 2rem 7rem;
+    }
+
+    &_invisible {
+        position: absolute;//para que se pueda poner fuera del botón cuando no está en hover
+        left: 0%;
+        top: -100%;//del tamaño del elemento
+        padding: 2rem 0;//no se usa 7, se pone 0 para que tenga más espacio y no muestre hasta el hover
+    }
+
+    &:hover &_visible {
+        // bottom: 200rem; no se puede usar porque no se definió posicionamiento
+        transform: translateY(100%);
+    }
+
+    &:hover &_invisible {
+        top: 0;//regresa del -100%
+    }
+    
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: -1;
+    opacity: .7;
+
+    overflow: hidden;
+
+    &-content {
+        height: 100%;
+        width: 100%;//Hasta aquí, vuelve a recortar el video para que se ajuste al padre
+        // luego con object-fit: se ajusta a las dimensiones del padre
+        object-fit: cover;//similar al de las img, pero este funciona para elementos html
+    }
+}
+
+.parpadea {
+    animation-name: parpadeo;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.u-clase-parpadea {
+    font-family: 'Viaoda Libre', cursive,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 100;
+    
+    display: inline-block; //junta el texto con el background-image
+    color: transparent;//para que se vea el color del gradiente
+    letter-spacing: .8rem;
+}
+  
+@keyframes parpadeo {  
+    0% {
+        opacity: 1.0; 
+        color: aqua;
+    }
+    55% {
+        opacity: 1.0; 
+        color: hotpink;
+    }
+    100% { 
+        opacity: 1.0; 
+        color:aqua;
+    }
 }

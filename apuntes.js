@@ -134,4 +134,94 @@ center.
 Cubic-bezier para manejar los tiempos de las transiciones
 
 
+A agregar en el proyecto: 
+
+html: 
+    main class="hotel-view" 
+    las imágenes de la galaerìa se envolverán en un figure, permitirá agregar un subtítulo a estas imágenes
+
+    Cambiar la estrela por una estrella rellena
+
+components: 
+    se agrega .gallery
+    Para hacer imágenes responsivas las imágenes se establecen con un width o height en porcentaje
+    Las imágenes siempre deben estar desplegadas en bloque
+
+    overview
+
+    Margen Automático: de esta forma, los elementos ocupan sólo el espacio que necesitan, en vez de usar flex: 1; crea espacios
+    en blanco: margin-right: auto; o margin-left (Revisar si funciona sin display: flex; )
+
+    los elementos svg se comportan como elementos en línea, para que se alìneen se debe especificar a su elemento padre como
+    display: flex;
+
+    la animaciòn de keframes se manda a llamar con animation:
+
+layout: 
+    quitar el background
+
+    Agregar en la clase header los pixeles y el tipo de border-bottom
+        border-bottom: 1px solid var(--color-primary);
+
+    detail: 
+
+    en el archivo base, crear la var line
+
+/////
+Last-of-type funciona de manera similar a last-child, sólo que last-of-type se refiere al último
+de su mismo tipo (por ej, un párrafo)
+
+MASKS:
+    Define un área donde podemos mirar a través del elemento y ver lo que hay detrás.
+    Para el símbolo de la lista, se hará el color de fondo del pseudo elemento before a un color
+    sólido y luego usar el ícono como una máscara y ver lo que hay detrás, entonces mostrará el fondo.
+
+BOX-SIZING: 
+    Al definirlo como border-box: incluye el padding y el borde dentro de la altura y el ancho de
+    los elementos. Para establecer que el borde esté por encima del ancho y la altura: se establece
+    box-sizing: content-box.
+
+Para hacer el símbolo de las comillas se usará el pseudo-elemento before, por lo que no se agregará
+nada en el html, sino en el css.
+Donde se defina position: absolute; en el padre se debe definir position: relative;
+z-index sólo funciona al definir una posición, no importa cuál sea, en el índice + grande
+
+Para hacer el botón book: dentro de él tendrá dos contenidos, uno que mostrará el texto normal
+y el otro que aparecerá cuando se haga hover. Utilizando span para c/u
+
+& > * -> Todos sus hijos
+
+Media Queries para hacer un sitio responsivo: 
+Se establecen los break points
+Se usarán vars de sass para establcer estos puntos, no vars de css xq no funcionan bien.
+$bp-largest: 7rem; //75=1200/16; 1200 es el punto de quiebre
+
+Escribir las media queries en los bloques donde queremos que se establezca el cambio llegados a ese ancho
+@media only screen and (max-width: $bp-largest) {
+        margin: 0%; //lo que queremos que haga
+    }
+A los 900px hacer que la barra de navegación izquierda se vaya a la parte sup de la pantalla, el 
+contenedor content ya está en flex, ahora hay que cambiar la direccción de los elementos:
+flex-direction: column;
+Poner los elementos de la navegación, uno al lado del otro.
+Para crear un breakpoint se dividen los pixeles al cual se rompe el diseño / 16 y el resultado
+será expresado en "em".
+Siempre poner al final del código la ventana más pequeña, para que esta se aplique en anchos más
+pequeños (recordar los estilos en cascada, css aplicará el último código escrito)
+
+En el header, mover la barra de bpusqueda al final a los 540px, utilizando "order" en .search
+y flez-wrap: wrap; en .header
+
+Agregando soporte para Firefox, ya que no se soporta la mask en archivo componentes (línea 407)
+el contenido de la url no es ! por lo que puede ir vacío.
+Primero se pone con prefijo -web-kit y luego sin. Arriba del soporte se pone si la opción en caso
+de que lo no soporte
+
+Para el autocompletado:
+    Crear un div debajo del input text
+
+    onkeyup: cuando el usuario presiona una tecla del teclado
+
+
+
 */

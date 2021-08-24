@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_btn.css">
 
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <title>Ing Sebastian</title>
@@ -17,13 +18,21 @@
         <header class="header">
             <img src="img/logo.png" alt="logo" class="logo">
 
-            <form action="#" class="search">
-                <input type="text" placeholder="Escribe tu destino" class="search__input">
+            <form action="#" class="search" autocomplete="on">
+                <input type="text" placeholder="Escribe tu destino" autocomplete="on" class="search__input">
                 <button class="search__button">
                     <svg class="search__icon">
                         <use xlink:href="img/sprite.svg#icon-aircraft"></use>
                     </svg>
                 </button>
+                <div class="search_autocombox">
+                    <!-- <li>Madrid, España</li>
+                    <li>Rabat, Marruecos</li>
+                    <li>París, Francia</li>
+                    <li>Pekin, China</li>
+                    <li>Oslo, Noruega</li>
+                    <li>Reikiabik, Inslandia</li> -->
+                </div>
             </form>
 
             <nav class="user-nav">
@@ -45,6 +54,8 @@
                 </div>
             </nav>
         </header>
+
+        
 
         <div class="content">
             <nav class="sidebar">
@@ -88,10 +99,182 @@
                 </div>
             </nav>
             <main class="hotel-view">
-holaaaaaaaaaaaaa
+                <div class="gallery">
+                    <figure class="gallery_items">
+                        <img src="img/AxKqisRPQSA.jpg" alt="img1" class="gallery_photo">
+                    </figure>
+                    <figure class="gallery_items">
+                        <img src="img/PQZnHyDd9Dc.jpg" alt="img2" class="gallery_photo">
+                    </figure>
+                    <figure class="gallery_items">
+                        <img src="img/Polska.jpg" alt="img3" class="gallery_photo">
+                    </figure>
+                </div>
+
+                <div class="overview">
+
+                    <h1 class="overview_heading u-clase-parpadea parpadea">
+                        I am Sebastian
+                    </h1>
+                    <div class="overview_stars">
+                        <svg class="overview_icon-star">
+                            <use xlink:href="img/sprite.svg#icon-star-empty"></use>
+                        </svg>
+                        <svg class="overview_icon-star">
+                            <use xlink:href="img/sprite.svg#icon-star-empty"></use>
+                        </svg>
+                        <svg class="overview_icon-star">
+                            <use xlink:href="img/sprite.svg#icon-star-empty"></use>
+                        </svg>
+                        <svg class="overview_icon-star">
+                            <use xlink:href="img/sprite.svg#icon-star-empty"></use>
+                        </svg>
+                        <svg class="overview_icon-star">
+                            <use xlink:href="img/sprite.svg#icon-star-empty"></use>
+                        </svg>
+                    </div>
+
+                    <div class="overview_location">
+                        <svg class="overview_icon-fire">
+                            <use xlink:href="img/sprite.svg#icon-fire"></use>
+                        </svg>
+                        <button class="btn-inline">
+                            Madrid, España
+                        </button>
+                    </div>
+
+                    <div class="overview_rating">
+                        <div class="overview_rating-average">
+                            9.3
+                        </div>
+                        <div class="overview_rating-count">
+                            741 votes
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="detail">
+
+                    <div class="detail_bg-video">
+                        <video class="detail_bg-video-content" autoplay muted loop>
+                            <!--La etiqueta Source no se cierra-->
+                            <source src="img/Aurora.mp4" type="video/mp4">
+                            Tu navegador no puede reproducir el video de fondo ):
+                            Te lo vas a perder? Intenta abrir esta página con otro navegador ;)
+                        </video>
+                    </div>
+
+                    <div class="description">
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fuga repudiandae libero tenetur? Temporibus molestias amet facere eum molestiae animi omnis culpa nam eos, ullam maiores aperiam ab ex sequi!
+                        </p>
+                        <p class="paragraph">
+                            Autem fuga repudiandae libero tenetur? Temporibus molestias amet facere eum molestiae animi omnis culpa nam eos, ullam maiores aperiam ab ex sequi!
+                        </p>
+                        <ul class="list">
+                            <li class="list_item">Close to the beach</li>
+                            <li class="list_item">Breakfasta included</li>
+                            <li class="list_item">Free airport shuttle</li>
+                            <li class="list_item">Free wifi in all rooms</li>
+                            <li class="list_item">Air condiotioning and heating</li>
+                            <li class="list_item">Pets allowed</li>
+                            <li class="list_item">We speak all languages</li>
+                            <li class="list_item">Perfect for families</li>
+                        </ul>
+                        <div class="recommend">
+                            <p class="recommend_count">
+                                Lucy and other friends recommend this hotel.
+                            </p>   
+                            <div class="recommend_friends">
+                                <img src="img/Albany.jpg" alt="img-11" class="recommend_photo">
+                                <img src="img/4nulm.jpg" alt="img-11" class="recommend_photo">
+                                <img src="img/Brasil.jpg" alt="img-11" class="recommend_photo">
+                                <img src="img/Belo.jpg" alt="img-11" class="recommend_photo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-reviews">
+                        <figure class="review">
+                            <blockquote class="review_text">
+                                Temporibus molestias amet facere eum molestiae animi omnis culpa nam eos.
+                            </blockquote>
+                            <figcaption class="review_user">
+                                <img src="img/AcHtp_g48vU.jpg" alt="rev1" class="review_photo">
+                                <div class="review_user-box">
+                                    <p class="review_user-name">Maricela Palacios</p>
+                                    <p class="review_user-date">Febrero 01, 1975</p>
+                                </div>
+                                <div class="review_rating">10</div>
+                            </figcaption>
+                        </figure>
+                        <figure class="review">
+                            <blockquote class="review_text">
+                                Temporibus molestias amet facere eum molestiae animi omnis culpa nam eos.
+                            </blockquote>
+                            <figcaption class="review_user">
+                                <img src="img/iSNSMibbG2w.jpg" alt="rev1" class="review_photo">
+                                <div class="review_user-box">
+                                    <p class="review_user-name">Sebastian Palacios</p>
+                                    <p class="review_user-date">Noviembre 30, 1994</p>
+                                </div>
+                                <div class="review_rating">9.9</div>
+                            </figcaption>
+                        </figure>
+
+                        <button class="btn-inline">
+                            Show all <span>&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cta">
+
+                    <div class="cta_bg-video">
+                        <video class="cta_bg-video-content" autoplay muted loop>
+                            <!--La etiqueta Source no se cierra-->
+                            <source src="img/Lights.mp4" type="video/mp4">
+                            Tu navegador no puede reproducir el video de fondo ):
+                            Te lo vas a perder? Intenta abrir esta página con otro navegador ;)
+                        </video>
+                    </div>
+
+                    <h2 class="cta_book-now">
+                        Good news! We have 3 free rooms for your selected dates!
+                    </h2>
+                    
+                    <!-- Botón neón -->
+                    <div class="cta_btn">
+                        <a href="#" class="cta_dos">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <!-- Book Now! -->
+                            <p class="cta_visible">
+                                Book now!
+                            </p>
+                            <p class="cta_invisible">
+                                Only 3 rooms left
+                            </p>
+                        </a>
+                    </div>
+                    <!-- Botón clase -->
+                    <!-- <button class="btn">
+                        <span class="btn_visible">
+                            Book now!
+                        </span>
+                        <span class="btn_invisible">
+                            Only 3 rooms left
+                        </span>
+                    </button> -->
+
+                </div>
             </main>
         </div>
     </div>
     
+    <script src="js/suggestions.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

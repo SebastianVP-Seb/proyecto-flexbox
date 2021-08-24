@@ -1,0 +1,161 @@
+a:not(.side-nav_link) {
+    font-family: 'Viaoda Libre', cursive,sans-serif;
+    color: white;
+
+    position: relative;
+    display: inline-block;
+    padding: 30px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 100;
+    font-size: 30px;
+    transition: 1s;
+
+    overflow: hidden;
+    -webkit-box-reflect: below .5px linear-gradient(transparent,#0005);
+}
+
+a:not(.side-nav_link):nth-child(2) {
+    filter: hue-rotate(290deg);
+}
+
+a:not(.side-nav_link):nth-child(3) {
+    filter: hue-rotate(110deg);
+}
+
+a:not(.sideside-nav_link):nth-child(1) {
+    filter: hue-rotate(10deg);
+}
+
+a:not(.side-nav_link) span {
+    position: absolute;
+    /* display: block; */
+}
+
+a:not(.side-nav_link) span:nth-child(1) {
+    top: 0%;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, aqua);
+    animation: animation1 2s linear infinite;
+    animation-delay: 1s;
+} 
+
+a:not(.side-nav_link):hover span:nth-child(1) {
+    top: 0%;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hotpink);
+    animation: animation1 2s linear infinite;
+    animation-delay: 1s;
+} 
+
+@keyframes animation1 {
+    0% {
+        left: -100%;
+    }
+    50%,100% {
+        left: 100%;
+    }
+}
+
+a:not(.side-nav_link) span:nth-child(2) {
+    top: -100%;
+    right: 0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, aqua);
+    animation: animation2 2s linear infinite;
+    animation-delay: 1.5s;
+} 
+
+a:not(.side-nav_link):hover span:nth-child(2) {
+    top: -100%;
+    right: 0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, hotpink);
+    animation: animation2 2s linear infinite;
+    animation-delay: 1.5s;
+} 
+
+@keyframes animation2 {
+    0% {
+        top:-100%;
+    }
+    50%,100% {
+        top: 100%;
+    }
+}
+
+a:not(.side-nav_link) span:nth-child(3) {
+    bottom: 0%;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, transparent, aqua);
+    animation: animation3 2s linear infinite;
+    /* animation-delay: 1.2s; */
+} 
+
+a:not(.side-nav_link):hover span:nth-child(3) {
+    bottom: 0%;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, transparent, hotpink);
+    animation: animation3 2s linear infinite;
+    /* animation-delay: 1.2s; */
+} 
+@keyframes animation3 {
+    0% {
+        right:-100%;
+    }
+    50%,100% {
+        right: 100%;
+    }
+}
+
+a:not(.side-nav_link) span:nth-child(4) {
+    bottom: -100%;
+    left: 0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, aqua);
+    animation: animation4 2s linear infinite;
+    animation-delay: .6s;
+} 
+
+a:not(.side-nav_link):hover span:nth-child(4) {
+    bottom: -100%;
+    left: 0%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, hotpink);
+    animation: animation4 2s linear infinite;
+    animation-delay: .6s;
+} 
+
+@keyframes animation4 {
+    0% {
+        bottom:-100%;
+    }
+    50%,100% {
+        bottom: 100%;
+    }
+}
+/* 
+a:not(.side_nav-link) {
+    font-family: graffiti2;
+    color: rgb(62, 235, 19);
+}
+
+a:not(.side_nav-link):hover {
+    box-shadow: 0 0 5px rgb(62, 235, 19),
+                0 0 25px rgb(62, 235, 19),
+                0 0 50px rgb(62, 235, 19),
+                0 0 100px rgb(62, 235, 19); */
+/* } */

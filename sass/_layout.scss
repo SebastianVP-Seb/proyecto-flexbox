@@ -1,38 +1,140 @@
 .container {
     max-width: 120rem;
-    margin: 8rem 10rem;
+    margin: 7rem 9rem;
     background-color: var(--color-secondary);
     box-shadow: var(--shadow-dark);
     min-height: 70rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        // margin: 0%;
+
+        // para que desaparezca el fondo rosa
+        // max-width: 100%;
+        // width: 100%;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+        max-width: 100vh;
+        min-height: 100vh;
+        max-width: 60rem;
+    }
 }
 
 .header {
     font-size: 1.7rem;
     height: 7rem;
-    background-color: var(--color-secondary-dark);
-    border-bottom: var(--color-secondary-light);
+    background-image: linear-gradient(to top, rgb(27, 180, 155), rgb(32, 235, 201)) ;
+    border-bottom: 1px solid var(--color-primary);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+        flex-wrap: wrap;
+        height: 10rem;
+        align-content: center;
+    }
 }
 
 .content {
     display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
 }
 
 .sidebar {
     border-color: var(--color-tertiary-light);
     flex: 0 0 17%;
-    background-color: var(--color-tertiary);
+    background-image: linear-gradient(to left, rgb(18, 130, 175), rgb(122, 206, 231));
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media only screen and (max-width: $bp-medium) {
+        // flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 0%;
+    }
 }
 
 .hotel-view {
-    height: 80rem;
-    background-color: lavender;
+    //test
+    // height: 80rem;
+    // background-color: lavender;
+
     flex: 1;
+}
+
+.detail {
+    position: relative;
+    display: flex;
+    padding: 4.5rem;
+    background-color: rgb(47, 48, 44);
+    border-bottom: var(--line);
+    font-size: 1.3rem;
+
+    &_bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        // z-index: -1;
+        opacity: .3;
+    
+        overflow: hidden;
+    
+        &-content {
+            height: 100%;
+            width: 100%;//Hasta aquí, vuelve a recortar el video para que se ajuste al padre
+            // luego con object-fit: se ajusta a las dimensiones del padre
+            object-fit: cover;//similar al de las img, pero este funciona para elementos html
+        }
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.4rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
+}
+
+.description {
+    background-color: rgba(211, 228, 235, 0.288);
+    color: white;
+    font-weight: 700;
+    box-shadow: var(--shadow-light);
+    padding: 2.7rem;
+    flex: 0 0 60%;//Crecimiento, encogimiento, espacio que ocupa
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 2.4rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0%;
+        margin-bottom: 2rem;
+        // width: 100%;
+    }
+}
+
+.user-reviews {
+    //test
+    // background-color: sienna;
+    flex: 1;//Para que ocupe el espacio restante del 60%
+
+    display: flex;
+    flex-direction: column;//ya que al establecerlo flex, se alinean unos con otros
+    align-items: center;//para que el botón no se estire en todo el eje secundario, ya que está
+                        //definida la propiedad de stretch
 }
